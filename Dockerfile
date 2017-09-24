@@ -31,6 +31,7 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     zip \
     zlib1g-dev \
     libbz2-dev \
+    liblzma \
     bc \
     tzdata
 
