@@ -33,8 +33,15 @@ RUN apt-get update -y && apt-get install -y --no-install-recommends \
     libbz2-dev \
     liblzma-dev \
     bc \
+    perl \
+    curl \
     tzdata
 
+RUN cd /opt/ && \
+    curl https://raw.github.com/miyagawa/cpanminus/master/cpanm > cpanm && \
+    chmod +x cpanm && \
+    ln -s /opt/cpanm /usr/local/bin/
+    
 # needed for MGI data mounts
 RUN apt-get update && apt-get install -y libnss-sss && apt-get clean all
 
